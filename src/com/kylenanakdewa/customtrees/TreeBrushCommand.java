@@ -6,17 +6,16 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
-import org.bukkit.entity.Player;
 
 /**
  * Command to generate a tree or forest, where the sender is looking.
  */
-public class TreeCommand implements TabExecutor {
+public class TreeBrushCommand implements TabExecutor {
 
     @Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-		if(args.length>=2 && sender instanceof Player){
+		// Version command
+		/*if(args.length>=2 && sender instanceof Player){
             // Use the expression to place a tree
             TreeExpression expression = new TreeExpression(args[0]);
 
@@ -32,7 +31,7 @@ public class TreeCommand implements TabExecutor {
 
             if(!placed) sender.sendMessage("Tree placement failed.");
 			return placed;
-        }
+        }*/
 
         // Invalid command
         sender.sendMessage("Invalid arguments.");
