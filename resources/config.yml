@@ -1,0 +1,90 @@
+# CustomTrees by Kyle Nanakdewa
+# Configuration
+
+# Thank you for using CustomTrees! See my other plugins at http://akenland.com/plugins
+
+# Don't change the formatting of this file, or Bukkit will complain. To reset this config to default, just delete it.
+# We recommend using VS Code (https://code.visualstudio.com/) to modify this file, as it will help you with formatting.
+# Do NOT use tabs (tab indent) - use spaces. VS Code will automatically insert spaces, but other text editors won't.
+
+# Full documentation can be found at http://akenland.com/plugins/customtrees
+# After editing this file, use "/customtrees reload" to load your changes into the server.
+
+
+# Set the percentage chance that a custom tree will generate, instead of a vanilla tree. Default 20 for all.
+chance:
+  # Oak trees
+  TREE: 20
+  BIG_TREE: 20
+  SWAMP: 20
+
+  # Spruce trees
+  REDWOOD: 20
+  TALL_REDWOOD: 20
+  MEGA_REDWOOD: 20
+
+  # Birch trees
+  BIRCH: 20
+  TALL_BIRCH: 20
+
+  # Jungle trees
+  JUNGLE: 20
+  SMALL_JUNGLE: 20
+  COCOA_TREE: 20
+  JUNGLE_BUSH: 20
+
+  # Acacia trees
+  ACACIA: 20
+
+  # Dark oak trees
+  DARK_OAK: 20
+
+  # Other
+  BROWN_MUSHROOM: 20
+  RED_MUSHROOM: 20
+  CHORUS_PLANT: 20
+
+
+# Set the trees that can grow from saplings. Can be VANILLA, CUSTOM, BOTH, or NONE. Default BOTH for all.
+# VANILLA: only vanilla trees will grow (Minecraft default)
+# CUSTOM: only custom trees will grow
+# BOTH: a mix of vanilla and custom trees will grow, using percentages above
+# NONE: this type of tree will never grow from saplings
+saplings:
+  # Oak trees
+  TREE: BOTH
+  BIG_TREE: BOTH
+  SWAMP: BOTH
+
+  # Spruce trees
+  REDWOOD: BOTH
+  TALL_REDWOOD: BOTH
+  MEGA_REDWOOD: BOTH
+
+  # Birch trees
+  BIRCH: BOTH
+  TALL_BIRCH: BOTH
+
+  # Jungle trees
+  JUNGLE: BOTH
+  SMALL_JUNGLE: BOTH
+  COCOA_TREE: BOTH
+  JUNGLE_BUSH: BOTH
+
+  # Acacia trees
+  ACACIA: BOTH
+
+  # Dark oak trees
+  DARK_OAK: BOTH
+
+  # Other
+  BROWN_MUSHROOM: BOTH
+  RED_MUSHROOM: BOTH
+  CHORUS_PLANT: BOTH
+
+
+# The item to use for the brush. Can be any Minecraft item name. Default STICK.
+brush-material: STICK
+
+# The maximum distance players can place trees from (using /tree command or brush). Default 20.
+max-place-distance: 20

@@ -1,0 +1,24 @@
+name: CustomTrees
+version: 1.0
+description: Generate custom trees and forests, with saplings and commands.
+author: Kyle Nanakdewa
+website: http://Akenland.com/plugins
+
+main: com.kylenanakdewa.customtrees.CustomTreesPlugin
+depend: WorldEdit
+
+commands:
+  customtrees:
+    description: View plugin information, and reload the plugin.
+    permission: customtrees.admin
+    usage: /customtrees <version/reload>
+
+  tree:
+    description: Generate a tree or forest.
+    permission: customtrees.generate
+    usage: /tree <type> [forest]
+
+  treebrush:
+    description: Get a tree brush, to generate many trees or forests.
+    permission: customtrees.brush
+    usage: /treebrush <type> [forest]
