@@ -37,7 +37,7 @@ public class CustomTreeTemplate extends TreeTemplate {
         EditSession editSession = player!=null ? wePlugin.createEditSession(player) : wePlugin.getWorldEdit().getEditSessionFactory().getEditSession(new BukkitWorld(location.getWorld()), -1);
 
         // Get the location of the warpstone's center
-        Vector loc = BukkitUtil.toVector(location);
+        Vector loc = BukkitUtil.toVector(location.add(0, 1, 0));
 
         // Load a random custom tree
         CuboidClipboard schem = getSchematic();
