@@ -1,6 +1,8 @@
 package com.kylenanakdewa.customtrees;
 
 import com.kylenanakdewa.customtrees.treetemplates.TreeTemplate;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,10 +17,10 @@ import org.bukkit.entity.Player;
 class TreeExpression {
 
     /** The selected trees, and the percentage chance they will be placed. */
-    Map<TreeTemplate,Double> trees;
+    Map<TreeTemplate,Double> trees = new HashMap<TreeTemplate,Double>();
 
     TreeExpression(String expression){
-        String[] entries = expression.split(",");
+        String[] entries = expression.toUpperCase().split(",");
         for(String entry : entries){
 
             // Chance

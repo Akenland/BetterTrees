@@ -16,7 +16,7 @@ public class TreeCommand implements TabExecutor {
     @Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-		if(args.length>=2 && sender instanceof Player){
+		if(args.length>=1 && sender instanceof Player){
             // Use the expression to place a tree
             TreeExpression expression = new TreeExpression(args[0]);
 
