@@ -5,7 +5,7 @@ author: Kyle Nanakdewa
 website: http://Akenland.com/plugins
 
 main: com.kylenanakdewa.customtrees.CustomTreesPlugin
-depend: WorldEdit
+depend: [WorldEdit]
 
 commands:
   customtrees:
