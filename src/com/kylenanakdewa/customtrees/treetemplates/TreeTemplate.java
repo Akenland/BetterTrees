@@ -15,7 +15,7 @@ public abstract class TreeTemplate {
      * Gets a template for a custom tree.
      * @param treeType the type/species of tree to use
      */
-    TreeTemplate(TreeType treeType){
+    public TreeTemplate(TreeType treeType){
         this.treeType = treeType;
     }
 

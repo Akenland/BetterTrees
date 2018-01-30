@@ -17,7 +17,7 @@ import org.bukkit.entity.Player;
 class TreeExpression {
 
     /** The selected trees, and the percentage chance they will be placed. */
-    Map<TreeTemplate,Double> trees = new HashMap<TreeTemplate,Double>();
+    private Map<TreeTemplate,Double> trees = new HashMap<TreeTemplate,Double>();
 
     TreeExpression(String expression){
         String[] entries = expression.toUpperCase().split(",");

@@ -1,8 +1,9 @@
 package com.kylenanakdewa.customtrees;
 
-import com.kylenanakdewa.customtrees.treetemplates.CustomTreeTemplate;
 import com.kylenanakdewa.customtrees.treetemplates.TreeTemplate;
 import com.kylenanakdewa.customtrees.treetemplates.VanillaTreeTemplate;
+import com.kylenanakdewa.customtrees.treetemplates.CustomTreeTemplate;
+import com.kylenanakdewa.customtrees.treetemplates.BothTreesTemplate;
 import org.bukkit.TreeType;
 
 /**
@@ -15,10 +16,10 @@ enum TreeSource {
     /** Custom trees in this plugin's folder. */
     CUSTOM(CustomTreeTemplate.class),
     /** Both vanilla and custom trees. */
-    BOTH(null),
+    BOTH(BothTreesTemplate.class),
     /** No trees. */
     NONE(null);
-    
+
     private Class<? extends TreeTemplate> treeTemplateClass;
 
     private TreeSource(Class<? extends TreeTemplate> treeTemplateClass){

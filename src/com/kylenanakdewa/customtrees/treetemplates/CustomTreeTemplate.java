@@ -24,7 +24,7 @@ import org.bukkit.entity.Player;
  */
 public class CustomTreeTemplate extends TreeTemplate {
 
-    CustomTreeTemplate(TreeType treeType){
+    public CustomTreeTemplate(TreeType treeType){
         super(treeType);
     }
 

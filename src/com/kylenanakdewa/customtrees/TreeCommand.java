@@ -21,7 +21,7 @@ public class TreeCommand implements TabExecutor {
             TreeExpression expression = new TreeExpression(args[0]);
 
             // Check if placing forest
-            if(args[1].equalsIgnoreCase("forest")){
+            if(args.length>=2 && args[1].equalsIgnoreCase("forest")){
                 sender.sendMessage("Not yet implemented.");
                 return false;
             }

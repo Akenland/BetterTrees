@@ -16,7 +16,7 @@ public class BothTreesTemplate extends TreeTemplate {
     private final VanillaTreeTemplate vanilla;
     private final CustomTreeTemplate custom;
 
-    BothTreesTemplate(TreeType treeType){
+    public BothTreesTemplate(TreeType treeType){
         super(treeType);
         vanilla = new VanillaTreeTemplate(treeType);
         custom = new CustomTreeTemplate(treeType);

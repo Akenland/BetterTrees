@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
  */
 public class VanillaTreeTemplate extends TreeTemplate {
 
-    VanillaTreeTemplate(TreeType treeType){
+    public VanillaTreeTemplate(TreeType treeType){
         super(treeType);
     }
 
