@@ -43,7 +43,7 @@ public class CustomTreeTemplate extends TreeTemplate {
         // Load a random custom tree
         CuboidClipboard schem = getSchematic();
         if(schem==null){
-            player.sendMessage(BetterTreesPlugin.errorColor+"No custom tree schematics found for "+treeType);
+            if(player!=null && player.hasPermission("bettertrees.generate")) player.sendMessage(BetterTreesPlugin.errorColor+"No custom tree schematics found for "+treeType);
             return false;
         }
 
@@ -54,7 +54,7 @@ public class CustomTreeTemplate extends TreeTemplate {
         try {
             schem.paste(editSession, loc, true);
         } catch(MaxChangedBlocksException e){
-            player.sendMessage(BetterTreesPlugin.errorColor+"Unable to generate custom tree, too many blocks changed.");
+            if(player!=null) player.sendMessage(BetterTreesPlugin.errorColor+"Unable to generate custom tree, too many blocks changed.");
             return false;
         }
         editSession.redo(editSession);

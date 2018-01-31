@@ -2,7 +2,7 @@ package com.kylenanakdewa.bettertrees;
 
 import java.util.Arrays;
 import java.util.List;
-
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -28,10 +28,15 @@ public class TreeCommand implements TabExecutor {
 
             Player player = (Player)sender;
 
-            boolean placed = expression.placeTree(player.getTargetBlock(null, BetterTreesPlugin.maxPlaceDistance).getLocation(), player);
-
-            if(!placed) sender.sendMessage(BetterTreesPlugin.errorColor+"Tree placement failed.");
-			return placed;
+            Block targetBlock = player.getTargetBlock(null, BetterTreesPlugin.maxPlaceDistance);
+            if(targetBlock.isEmpty()){
+                player.sendMessage(BetterTreesPlugin.errorColor+"Target block is too far away.");
+                return false;
+            } else {
+                boolean placed = expression.placeTree(targetBlock.getLocation(), player);
+                if(!placed) player.sendMessage(BetterTreesPlugin.errorColor+"Tree placement failed.");
+                return placed;
+            }
         }
 
         // Invalid command

@@ -91,4 +91,4 @@ bonemeal-modifier: 0
 brush-material: STICK
 
 # The maximum distance players can place trees from (using /tree command or brush). Default 20.
-max-place-distance: 20
+max-place-distance: 50

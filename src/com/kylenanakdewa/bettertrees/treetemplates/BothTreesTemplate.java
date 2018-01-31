@@ -24,12 +24,18 @@ public class BothTreesTemplate extends TreeTemplate {
 
 	@Override
 	public boolean placeTree(Location location, Player player) {
-		return pickRandom().placeTree(location, player);
+        TreeTemplate template = pickRandom();
+        boolean placed = template.placeTree(location, player);
+        if(!placed && template instanceof CustomTreeTemplate) placed = vanilla.placeTree(location, player);
+        return placed;
 	}
 
 	@Override
 	public boolean placeTree(Location location) {
-		return pickRandom().placeTree(location);
+        TreeTemplate template = pickRandom();
+        boolean placed = template.placeTree(location);
+        if(!placed && template instanceof CustomTreeTemplate) placed = vanilla.placeTree(location);
+        return placed;
 	}
 
     /** Picks either the vanilla or custom tree template. */

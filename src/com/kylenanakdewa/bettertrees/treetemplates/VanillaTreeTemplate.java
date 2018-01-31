@@ -4,6 +4,8 @@ import org.bukkit.Location;
 import org.bukkit.TreeType;
 import org.bukkit.entity.Player;
 
+import com.kylenanakdewa.bettertrees.BetterTreesPlugin;
+
 /**
  * Represents a vanilla Minecraft tree.
  */
@@ -20,7 +22,9 @@ public class VanillaTreeTemplate extends TreeTemplate {
 
 	@Override
 	public boolean placeTree(Location location){
-		return location.getWorld().generateTree(location, treeType);
+		boolean placed = location.getWorld().generateTree(location, treeType);
+		if(!placed) BetterTreesPlugin.plugin.getLogger().warning("Failed to generate vanilla tree.");
+		return placed;
     }
 
 }

@@ -62,6 +62,7 @@ class TreeExpression {
             }
         }
         // If no tree found, return null
+        BetterTreesPlugin.plugin.getLogger().warning("Failed to find tree template for an expression!");
         return null;
     }
 

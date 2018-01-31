@@ -1,5 +1,6 @@
 package com.kylenanakdewa.bettertrees;
 
+import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -37,9 +38,13 @@ final class TreeBrushListener implements Listener {
         } else if(forestLine.contains("Single Tree")){
             TreeExpression expression = new TreeExpression(expressionLine);
 
-            boolean placed = expression.placeTree(event.getPlayer().getTargetBlock(null, BetterTreesPlugin.maxPlaceDistance).getLocation(), event.getPlayer());
-
-            if(!placed) event.getPlayer().sendMessage(BetterTreesPlugin.errorColor+"Tree placement failed.");
+            Block targetBlock = event.getPlayer().getTargetBlock(null, BetterTreesPlugin.maxPlaceDistance);
+            if(targetBlock.isEmpty()){
+                event.getPlayer().sendMessage(BetterTreesPlugin.errorColor+"Target block is too far away.");
+            } else {
+                boolean placed = expression.placeTree(targetBlock.getLocation(), event.getPlayer());
+                if(!placed) event.getPlayer().sendMessage(BetterTreesPlugin.errorColor+"Tree placement failed.");
+            }
         } else return;
     }
 
