@@ -13,7 +13,7 @@ final class TreeBrushListener implements Listener {
 
     @EventHandler
     public void onBrushUse(PlayerInteractEvent event){
-        if(event.isCancelled()) return;
+        if(event.isCancelled() || !event.hasItem() || !event.getPlayer().hasPermission("bettertrees.brush")) return;
 
         ItemStack item = event.getItem();
         ItemMeta meta = item.getItemMeta();
