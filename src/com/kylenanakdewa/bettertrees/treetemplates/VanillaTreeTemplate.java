@@ -22,9 +22,7 @@ public class VanillaTreeTemplate extends TreeTemplate {
 
 	@Override
 	public boolean placeTree(Location location){
-		boolean placed = location.getWorld().generateTree(location, treeType);
-		if(!placed) BetterTreesPlugin.plugin.getLogger().warning("Failed to generate vanilla tree.");
-		return placed;
+		return location.getWorld().generateTree(location, treeType);
     }
 
 }

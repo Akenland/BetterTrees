@@ -27,8 +27,7 @@ class TreeExpression {
             double chance;
             if(entry.contains("%")){
                 String[] splitEntry = entry.split("%");
-                try{chance = Double.parseDouble(splitEntry[0]);}
-                catch(NumberFormatException e){chance = 100/entries.length;}
+                chance = Double.parseDouble(splitEntry[0]);
                 entry = splitEntry[1];
             } else chance = 100/entries.length;
 
@@ -36,15 +35,13 @@ class TreeExpression {
             TreeSource treeSource;
             if(entry.contains(":")){
                 String[] splitEntry = entry.split(":");
-                try{treeSource = TreeSource.valueOf(splitEntry[1]);}
-                catch(IllegalArgumentException e){treeSource = TreeSource.BOTH;}
+                treeSource = TreeSource.valueOf(splitEntry[1]);
                 entry = splitEntry[0];
             } else treeSource = TreeSource.BOTH;
 
             // Tree type
             TreeType treeType;
-            try{treeType = TreeType.valueOf(entry);}
-            catch(IllegalArgumentException e){treeType = null;}
+            treeType = TreeType.valueOf(entry);
 
             // Save the tree to the map
             if(!treeSource.equals(TreeSource.NONE) && treeType!=null) trees.put(treeSource.getTreeTemplate(treeType), chance);
