@@ -15,11 +15,13 @@ public final class BetterTreesPlugin extends JavaPlugin {
 
 	public static BetterTreesPlugin plugin;
 
+
 	/** Percentage chances that custom trees will generate, when BOTH are allowed to generate. */
 	public static Map<TreeType,Double> customChances;
-
 	/** The sources of trees that can generate from saplings. */
 	public static Map<TreeType,TreeSource> saplingTrees;
+	/** The modifier to the custom chance, when bonemeal is used to grow the sapling. */
+	public static double bonemealModifier;
 
 	/** The material to use for the tree brush. */
 	public static Material brushMaterial;
@@ -73,6 +75,8 @@ public final class BetterTreesPlugin extends JavaPlugin {
 		saplingTrees = new HashMap<TreeType,TreeSource>();
 		for(String treeType : getConfig().getConfigurationSection("saplings").getKeys(false))
 			saplingTrees.put(TreeType.valueOf(treeType), TreeSource.valueOf(getConfig().getString("saplings."+treeType)));
+
+		bonemealModifier = getConfig().getDouble("bonemeal-modifier");
 
 		brushMaterial = Material.valueOf(getConfig().getString("brush-material"));
 

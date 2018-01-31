@@ -17,7 +17,7 @@ public class BetterTreesCommands implements TabExecutor {
 		// Version command
 		if(args.length==0 || args[0].equalsIgnoreCase("version")){
 			sender.sendMessage(BetterTreesPlugin.accentColor+"BetterTrees "+BetterTreesPlugin.plugin.getDescription().getVersion()+" by Kyle Nanakdewa");
-            sender.sendMessage(BetterTreesPlugin.messageColor+"- Generate custom trees and forests, with saplings and commands");
+            sender.sendMessage(BetterTreesPlugin.messageColor+"- Generate customized trees and forests, with saplings, brushes, and commands");
             sender.sendMessage(BetterTreesPlugin.messageColor+"- Website: http://Akenland.com/plugins");
 			return true;
         }

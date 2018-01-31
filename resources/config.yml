@@ -82,6 +82,10 @@ saplings:
   RED_MUSHROOM: BOTH
   CHORUS_PLANT: BOTH
 
+# The chance of a custom tree growing, when BOTH are enabled above, is increased by this value, when bonemeal is used (instead of natural growth). Default 0.
+# Set the percentages above to 0, and set this to 100, to only grow custom trees when bonemeal is used.
+bonemeal-modifier: 0
+
 
 # The item to use for the brush. Can be any Minecraft item name. Default STICK.
 brush-material: STICK
