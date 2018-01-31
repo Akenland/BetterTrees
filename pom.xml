@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.kylenanakdewa</groupId>
-  <artifactId>CustomTrees</artifactId>
+  <artifactId>BetterTrees</artifactId>
   <version>1.0</version>
 
   <build>

@@ -1,4 +1,4 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

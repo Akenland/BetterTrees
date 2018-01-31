@@ -1,17 +1,19 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.TreeType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Main plugin class for CustomTrees.
+ * Main plugin class for BetterTrees.
  */
-public final class CustomTreesPlugin extends JavaPlugin {
+public final class BetterTreesPlugin extends JavaPlugin {
 
-	public static CustomTreesPlugin plugin;
+	public static BetterTreesPlugin plugin;
 
 	/** Percentage chances that custom trees will generate, when BOTH are allowed to generate. */
 	public static Map<TreeType,Double> customChances;
@@ -26,12 +28,22 @@ public final class CustomTreesPlugin extends JavaPlugin {
 	public static int maxPlaceDistance;
 
 
+	/** The accent color for this plugin's messages. */
+	public static ChatColor accentColor = ChatColor.DARK_GREEN;
+	/** The main color for this plugin's messages. */
+	public static ChatColor messageColor = ChatColor.GRAY;
+	/** The secondary color for this plugin's non-important messages. */
+	public static ChatColor infoColor = ChatColor.DARK_GRAY;
+	/** The color for this plugin's error messages. */
+	public static ChatColor errorColor = ChatColor.RED;
+
+
 	@Override
 	public void onEnable(){
 		plugin = this;
 
 		// Main command
-		getCommand("customtrees").setExecutor(new CustomTreesCommands());
+		getCommand("bettertrees").setExecutor(new BetterTreesCommands());
 		getCommand("tree").setExecutor(new TreeCommand());
 		getCommand("treebrush").setExecutor(new TreeBrushCommand());
 

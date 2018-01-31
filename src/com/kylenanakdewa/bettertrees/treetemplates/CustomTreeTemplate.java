@@ -1,6 +1,6 @@
-package com.kylenanakdewa.customtrees.treetemplates;
+package com.kylenanakdewa.bettertrees.treetemplates;
 
-import com.kylenanakdewa.customtrees.CustomTreesPlugin;
+import com.kylenanakdewa.bettertrees.BetterTreesPlugin;
 import com.sk89q.worldedit.CuboidClipboard;
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.MaxChangedBlocksException;
@@ -22,6 +22,7 @@ import org.bukkit.entity.Player;
 /**
  * Represents a custom tree, from a WorldEdit schematic.
  */
+@SuppressWarnings("deprecation")
 public class CustomTreeTemplate extends TreeTemplate {
 
     public CustomTreeTemplate(TreeType treeType){
@@ -41,6 +42,10 @@ public class CustomTreeTemplate extends TreeTemplate {
 
         // Load a random custom tree
         CuboidClipboard schem = getSchematic();
+        if(schem==null){
+            player.sendMessage(BetterTreesPlugin.errorColor+"No custom tree schematics found for "+treeType);
+            return false;
+        }
 
         // Randomly rotate the schematic
         schem.rotate2D(Arrays.asList(0, 90, 180, 270).get(ThreadLocalRandom.current().nextInt(3)));
@@ -49,7 +54,7 @@ public class CustomTreeTemplate extends TreeTemplate {
         try {
             schem.paste(editSession, loc, true);
         } catch(MaxChangedBlocksException e){
-            player.sendMessage("Unable to generate custom tree, too many blocks changed.");
+            player.sendMessage(BetterTreesPlugin.errorColor+"Unable to generate custom tree, too many blocks changed.");
             return false;
         }
         editSession.redo(editSession);
@@ -64,13 +69,15 @@ public class CustomTreeTemplate extends TreeTemplate {
     /** Gets a random custom tree schematic. */
     private CuboidClipboard getSchematic(){
         // Get a random file from this treeType's folder
-        File[] schemFiles = new File(CustomTreesPlugin.plugin.getDataFolder(), treeType.name()).listFiles();
+        File[] schemFiles = new File(BetterTreesPlugin.plugin.getDataFolder(), treeType.name()).listFiles();
+        if(schemFiles==null || schemFiles.length<1) return null;
+
         File chosenSchem = schemFiles[ThreadLocalRandom.current().nextInt(schemFiles.length)];
 
         try {
             return SchematicFormat.MCEDIT.load(chosenSchem);
         } catch(IOException | DataException e){
-            CustomTreesPlugin.plugin.getLogger().warning(("An error occured loading schematic "+chosenSchem));
+            BetterTreesPlugin.plugin.getLogger().warning(("An error occured loading schematic "+chosenSchem));
             return null;
         }
     }

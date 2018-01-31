@@ -1,9 +1,9 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
-import com.kylenanakdewa.customtrees.treetemplates.TreeTemplate;
-import com.kylenanakdewa.customtrees.treetemplates.VanillaTreeTemplate;
-import com.kylenanakdewa.customtrees.treetemplates.CustomTreeTemplate;
-import com.kylenanakdewa.customtrees.treetemplates.BothTreesTemplate;
+import com.kylenanakdewa.bettertrees.treetemplates.TreeTemplate;
+import com.kylenanakdewa.bettertrees.treetemplates.VanillaTreeTemplate;
+import com.kylenanakdewa.bettertrees.treetemplates.CustomTreeTemplate;
+import com.kylenanakdewa.bettertrees.treetemplates.BothTreesTemplate;
 import org.bukkit.TreeType;
 
 /**

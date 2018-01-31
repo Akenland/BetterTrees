@@ -1,4 +1,4 @@
-package com.kylenanakdewa.customtrees.treetemplates;
+package com.kylenanakdewa.bettertrees.treetemplates;
 
 import org.bukkit.Location;
 import org.bukkit.TreeType;

@@ -1,14 +1,14 @@
-# CustomTrees by Kyle Nanakdewa
+# BetterTrees by Kyle Nanakdewa
 # Configuration
 
-# Thank you for using CustomTrees! See my other plugins at http://akenland.com/plugins
+# Thank you for using BetterTrees! See my other plugins at http://akenland.com/plugins
 
 # Don't change the formatting of this file, or Bukkit will complain. To reset this config to default, just delete it.
 # We recommend using VS Code (https://code.visualstudio.com/) to modify this file, as it will help you with formatting.
 # Do NOT use tabs (tab indent) - use spaces. VS Code will automatically insert spaces, but other text editors won't.
 
-# Full documentation can be found at http://akenland.com/plugins/customtrees
-# After editing this file, use "/customtrees reload" to load your changes into the server.
+# Full documentation can be found at http://akenland.com/plugins/bettertrees
+# After editing this file, use "/bettertrees reload" to load your changes into the server.
 
 
 # Set the percentage chance that a custom tree will generate, instead of a vanilla tree. Default 20 for all.

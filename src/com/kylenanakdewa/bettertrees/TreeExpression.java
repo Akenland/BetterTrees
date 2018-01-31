@@ -1,6 +1,6 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
-import com.kylenanakdewa.customtrees.treetemplates.TreeTemplate;
+import com.kylenanakdewa.bettertrees.treetemplates.TreeTemplate;
 
 import java.util.HashMap;
 import java.util.Map;

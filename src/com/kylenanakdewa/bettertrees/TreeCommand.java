@@ -1,4 +1,4 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,20 +22,20 @@ public class TreeCommand implements TabExecutor {
 
             // Check if placing forest
             if(args.length>=2 && args[1].equalsIgnoreCase("forest")){
-                sender.sendMessage("Not yet implemented.");
+                sender.sendMessage(BetterTreesPlugin.errorColor+"Not yet implemented.");
                 return false;
             }
 
             Player player = (Player)sender;
 
-            boolean placed = expression.placeTree(player.getTargetBlock(null, CustomTreesPlugin.maxPlaceDistance).getLocation(), player);
+            boolean placed = expression.placeTree(player.getTargetBlock(null, BetterTreesPlugin.maxPlaceDistance).getLocation(), player);
 
-            if(!placed) sender.sendMessage("Tree placement failed.");
+            if(!placed) sender.sendMessage(BetterTreesPlugin.errorColor+"Tree placement failed.");
 			return placed;
         }
 
         // Invalid command
-        sender.sendMessage("Invalid arguments.");
+        sender.sendMessage(BetterTreesPlugin.errorColor+"Invalid arguments.");
         return false;
 	}
 

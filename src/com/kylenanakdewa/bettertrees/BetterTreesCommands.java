@@ -1,4 +1,4 @@
-package com.kylenanakdewa.customtrees;
+package com.kylenanakdewa.bettertrees;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,29 +8,29 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 
 /**
- * Commands for the CustomTrees plugin.
+ * Commands for the BetterTrees plugin.
  */
-public class CustomTreesCommands implements TabExecutor {
+public class BetterTreesCommands implements TabExecutor {
 
     @Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		// Version command
 		if(args.length==0 || args[0].equalsIgnoreCase("version")){
-			sender.sendMessage("CustomTrees "+CustomTreesPlugin.plugin.getDescription().getVersion()+" by Kyle Nanakdewa");
-            sender.sendMessage("- Generate custom trees and forests, with saplings and commands");
-            sender.sendMessage("- Website: http://Akenland.com/plugins");
+			sender.sendMessage(BetterTreesPlugin.accentColor+"BetterTrees "+BetterTreesPlugin.plugin.getDescription().getVersion()+" by Kyle Nanakdewa");
+            sender.sendMessage(BetterTreesPlugin.messageColor+"- Generate custom trees and forests, with saplings and commands");
+            sender.sendMessage(BetterTreesPlugin.messageColor+"- Website: http://Akenland.com/plugins");
 			return true;
         }
 
 		// Reload command
 		if(args.length==1 && args[0].equalsIgnoreCase("reload")){
-			CustomTreesPlugin.plugin.reload();
-            sender.sendMessage("CustomTrees reloaded.");
+			BetterTreesPlugin.plugin.reload();
+            sender.sendMessage(BetterTreesPlugin.messageColor+"BetterTrees reloaded.");
             return true;
 		}
 
         // Invalid command
-        sender.sendMessage("Invalid arguments.");
+        sender.sendMessage(BetterTreesPlugin.errorColor+"Invalid arguments.");
         return false;
 	}
 

@@ -1,24 +1,24 @@
-name: CustomTrees
+name: BetterTrees
 version: 1.0
-description: Generate custom trees and forests, with saplings and commands.
+description: Generate customized trees and forests, with saplings, brushes, and commands.
 author: Kyle Nanakdewa
 website: http://Akenland.com/plugins
 
-main: com.kylenanakdewa.customtrees.CustomTreesPlugin
+main: com.kylenanakdewa.bettertrees.BetterTreesPlugin
 depend: [WorldEdit]
 
 commands:
-  customtrees:
+  bettertrees:
     description: View plugin information, and reload the plugin.
-    permission: customtrees.admin
-    usage: /customtrees <version/reload>
+    permission: bettertrees.admin
+    usage: /bettertrees <version/reload>
 
   tree:
     description: Generate a tree or forest.
-    permission: customtrees.generate
+    permission: bettertrees.generate
     usage: /tree <type> [forest]
 
   treebrush:
     description: Get a tree brush, to generate many trees or forests.
-    permission: customtrees.brush
+    permission: bettertrees.brush
     usage: /treebrush <type> [forest]
