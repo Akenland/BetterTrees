@@ -52,8 +52,9 @@ public final class BetterTreesPlugin extends JavaPlugin {
 		// Run all reload tasks
 		reload();
 
-		// Register event listener
+		// Register event listeners
 		getServer().getPluginManager().registerEvents(new SaplingListener(), plugin);
+		getServer().getPluginManager().registerEvents(new TreeBrushListener(), plugin);
 	}
 
 
