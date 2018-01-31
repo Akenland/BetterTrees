@@ -2,6 +2,7 @@ package com.kylenanakdewa.bettertrees;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -13,7 +14,11 @@ final class TreeBrushListener implements Listener {
 
     @EventHandler
     public void onBrushUse(PlayerInteractEvent event){
-        if(event.isCancelled() || !event.hasItem() || !event.getPlayer().hasPermission("bettertrees.brush")) return;
+        if(event.getAction().equals(Action.LEFT_CLICK_AIR)
+        || event.getAction().equals(Action.LEFT_CLICK_BLOCK)
+        || !event.hasItem()
+        || !event.getPlayer().hasPermission("bettertrees.brush")
+        ) return;
 
         ItemStack item = event.getItem();
         ItemMeta meta = item.getItemMeta();

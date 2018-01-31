@@ -37,7 +37,7 @@ final class SaplingListener implements Listener {
         // If this sapling just does custom trees, or chance is high enough, cancel event and grow a custom tree
         if(saplingTreeSource.equals(TreeSource.CUSTOM) || ThreadLocalRandom.current().nextDouble(100.0) < customTreeChance){
             event.setCancelled(true);
-            new CustomTreeTemplate(event.getSpecies()).placeTree(event.getLocation(), event.getPlayer());
+            new CustomTreeTemplate(event.getSpecies()).placeTree(event.getLocation().subtract(0, 1, 0), event.getPlayer());
             return;
         }
     }

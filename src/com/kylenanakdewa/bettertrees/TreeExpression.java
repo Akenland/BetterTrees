@@ -42,9 +42,9 @@ class TreeExpression {
             } else treeSource = TreeSource.BOTH;
 
             // Tree type
-            TreeType treeType = null;
+            TreeType treeType;
             try{treeType = TreeType.valueOf(entry);}
-            catch(IllegalArgumentException e){}
+            catch(IllegalArgumentException e){treeType = null;}
 
             // Save the tree to the map
             if(!treeSource.equals(TreeSource.NONE) && treeType!=null) trees.put(treeSource.getTreeTemplate(treeType), chance);
