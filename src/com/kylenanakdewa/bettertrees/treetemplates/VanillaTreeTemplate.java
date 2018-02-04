@@ -4,8 +4,6 @@ import org.bukkit.Location;
 import org.bukkit.TreeType;
 import org.bukkit.entity.Player;
 
-import com.kylenanakdewa.bettertrees.BetterTreesPlugin;
-
 /**
  * Represents a vanilla Minecraft tree.
  */
